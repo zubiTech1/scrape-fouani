@@ -1,0 +1,161 @@
+[
+  {
+    "desktop": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/1/151c94f9-2fff-4e25-a44a-9816cf04511f/image.png?_dc=1721642611",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "3:1"
+    },
+    "mobile": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/b/be7d0b4c-cfa4-4701-bdf8-0b9f01f0bd38/image.jpg?_dc=1721642609",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "9:16"
+    },
+    "params": {
+      "category_id": "16",
+      "category_name": "side-by-side"
+    },
+    "raw_link": "https://fouanistore.com/shop?category_id=16&category_name=side-by-side",
+    "timestamp": "2025-04-04T07:25:53.253645"
+  },
+  {
+    "desktop": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/a/ac5506a7-a624-4d71-bcf9-c98e6360a6ec/image.png?_dc=1738928463",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "3:1"
+    },
+    "mobile": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/8/8239320e-8b2f-4004-8a37-4560da34914b/image.jpg?_dc=1739006345",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "9:16"
+    },
+    "params": {
+      "with_filters": "true",
+      "category_id": "39",
+      "category_name": "undefined",
+      "brand_ids[]": "10"
+    },
+    "raw_link": "https://fouanistore.com/shop?with_filters=true&category_id=39&category_name=undefined&brand_ids[]=10&brand_ids[]=4&brand_ids[]=12&brand_ids[]=9&brand_ids[]=8",
+    "timestamp": "2025-04-04T07:25:53.269040"
+  },
+  {
+    "desktop": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/d/d6aea529-0ff8-45c6-be27-3fc4143fb391/image.jpg?_dc=1738928680",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "3:1"
+    },
+    "mobile": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/b/b5df9c39-8614-4260-8e2c-dd99b0001f96/image.jpg?_dc=1738938288",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "9:16"
+    },
+    "params": {
+      "force_brand": "Hisense"
+    },
+    "raw_link": "/search?force_brand=Hisense",
+    "timestamp": "2025-04-04T07:25:53.272033"
+  },
+  {
+    "desktop": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/e/ed3ec320-2853-4625-aeb4-6a25155c684d/image.png?_dc=1738929079",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "3:1"
+    },
+    "mobile": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/1/18624271-bdf9-4779-a8da-8b2d3310e1cc/image.png?_dc=1738938303",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "9:16"
+    },
+    "params": {
+      "force_subcategory": "Small Appliances"
+    },
+    "raw_link": "/search?force_subcategory=Small%20Appliances",
+    "timestamp": "2025-04-04T07:25:53.275574"
+  },
+  {
+    "desktop": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/7/7bfbf360-8feb-4dac-b36f-2de1d449bb8c/image.jpg?_dc=1741687615",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "3:1"
+    },
+    "mobile": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/e/e1c0d786-7413-414e-b456-637f1c691149/image.jpg?_dc=1741687641",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "9:16"
+    },
+    "params": {
+      "force_subcategory": "Washing Machines"
+    },
+    "raw_link": "/search?force_subcategory=Washing%20Machines",
+    "timestamp": "2025-04-04T07:25:53.275574"
+  },
+  {
+    "desktop": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/1/12f3c2dd-93b4-4931-ad34-2a92b47713c2/image.jpg?_dc=1738929857",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "3:1"
+    },
+    "mobile": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/b/bc19ebe1-ba33-41a2-8237-575b145994d4/image.jpg?_dc=1738929870",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "9:16"
+    },
+    "params": {
+      "force_subcategory": "TVs"
+    },
+    "raw_link": "/search?force_subcategory=TVs",
+    "timestamp": "2025-04-04T07:25:53.275574"
+  },
+  {
+    "desktop": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/9/960b7206-d6b0-4d3d-be2d-54f1ad468141/image.jpg?_dc=1739879049",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "3:1"
+    },
+    "mobile": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/c/cd36188a-cbe2-47e1-94aa-ead97311ae99/image.jpg?_dc=1739879057",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "9:16"
+    },
+    "params": {
+      "with_filters": "true",
+      "category_id": "45",
+      "category_name": "split-air-conditioner",
+      "brand_ids[]": "1"
+    },
+    "raw_link": "https://fouanistore.com/shop?with_filters=true&category_id=45&category_name=split-air-conditioner&brand_ids[]=1",
+    "timestamp": "2025-04-04T07:25:53.275574"
+  },
+  {
+    "desktop": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/8/85699fd0-0157-4cdf-b35a-3f134f9e373f/image.jpg?_dc=1741082822",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "3:1"
+    },
+    "mobile": {
+      "url": "https://cdn.salvaworld.com/tenants/fouani/picture/7/779650d7-3744-403b-92a3-47d85a875056/image.jpg?_dc=1741082836",
+      "alt": "Title",
+      "title": "Title",
+      "aspect_ratio": "9:16"
+    },
+    "params": {
+      "force_subcategory": "TVs"
+    },
+    "raw_link": "/search?force_subcategory=TVs",
+    "timestamp": "2025-04-04T07:25:53.275574"
+  }
+]

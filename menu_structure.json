@@ -1,0 +1,451 @@
+{
+    "categories": [
+        {
+            "title": "promotions",
+            "subcategories": [
+                {
+                    "title": "Refrigerators",
+                    "link": "https://fouanistore.com/shop?category_id=117&category_name=refrigerators",
+                    "category_id": "117",
+                    "category_name": "refrigerators"
+                },
+                {
+                    "title": "Kitchen Appliances",
+                    "link": "https://fouanistore.com/shop?category_id=156&category_name=kitchen-appliances",
+                    "category_id": "156",
+                    "category_name": "kitchen-appliances"
+                },
+                {
+                    "title": "ACs",
+                    "link": "https://fouanistore.com/shop?category_id=116&category_name=acs",
+                    "category_id": "116",
+                    "category_name": "acs"
+                },
+                {
+                    "title": "TVs",
+                    "link": "https://fouanistore.com/shop?category_id=115&category_name=tvs",
+                    "category_id": "115",
+                    "category_name": "tvs"
+                },
+                {
+                    "title": "Washing Machines",
+                    "link": "https://fouanistore.com/shop?category_id=120&category_name=washing-machines",
+                    "category_id": "120",
+                    "category_name": "washing-machines"
+                },
+                {
+                    "title": "All",
+                    "link": "https://fouanistore.com/shop?category_id=114&category_name=promotions",
+                    "category_id": "114",
+                    "category_name": "promotions"
+                }
+            ]
+        },
+        {
+            "title": "refrigerator",
+            "subcategories": [
+                {
+                    "title": "Single Door",
+                    "link": "https://fouanistore.com/shop?category_id=17&category_name=single-door",
+                    "category_id": "17",
+                    "category_name": "single-door"
+                },
+                {
+                    "title": "Top Freezer",
+                    "link": "https://fouanistore.com/shop?category_id=63&category_name=top-freezer",
+                    "category_id": "63",
+                    "category_name": "top-freezer"
+                },
+                {
+                    "title": "Bottom Freezer",
+                    "link": "https://fouanistore.com/shop?category_id=64&category_name=bottom-freezer",
+                    "category_id": "64",
+                    "category_name": "bottom-freezer"
+                },
+                {
+                    "title": "Freezers",
+                    "link": "https://fouanistore.com/shop?category_id=90&category_name=freezers",
+                    "category_id": "90",
+                    "category_name": "freezers"
+                },
+                {
+                    "title": "Side By Side",
+                    "link": "https://fouanistore.com/shop?category_id=16&category_name=side-by-side",
+                    "category_id": "16",
+                    "category_name": "side-by-side"
+                },
+                {
+                    "title": "4 Doors",
+                    "link": "https://fouanistore.com/shop?category_id=89&category_name=4-doors",
+                    "category_id": "89",
+                    "category_name": "4-doors"
+                },
+                {
+                    "title": "Chiller",
+                    "link": "https://fouanistore.com/shop?category_id=88&category_name=chiller",
+                    "category_id": "88",
+                    "category_name": "chiller"
+                },
+                {
+                    "title": "All",
+                    "link": "https://fouanistore.com/shop?category_id=15&category_name=refrigerator",
+                    "category_id": "15",
+                    "category_name": "refrigerator"
+                }
+            ]
+        },
+        {
+            "title": "tvs",
+            "subcategories": [
+                {
+                    "title": "Monitors",
+                    "link": "https://fouanistore.com/shop?category_id=122&category_name=monitors",
+                    "category_id": "122",
+                    "category_name": "monitors"
+                },
+                {
+                    "title": "32 Inch",
+                    "link": "https://fouanistore.com/shop?category_id=66&category_name=32-inch",
+                    "category_id": "66",
+                    "category_name": "32-inch"
+                },
+                {
+                    "title": "40-49 Inch",
+                    "link": "https://fouanistore.com/shop?category_id=65&category_name=40-49-inch",
+                    "category_id": "65",
+                    "category_name": "40-49-inch"
+                },
+                {
+                    "title": "50-59 Inch",
+                    "link": "https://fouanistore.com/shop?category_id=59&category_name=50-59-inch",
+                    "category_id": "59",
+                    "category_name": "50-59-inch"
+                },
+                {
+                    "title": "60-69 Inch",
+                    "link": "https://fouanistore.com/shop?category_id=60&category_name=60-69-inch",
+                    "category_id": "60",
+                    "category_name": "60-69-inch"
+                },
+                {
+                    "title": "70-79 Inch",
+                    "link": "https://fouanistore.com/shop?category_id=61&category_name=70-79-inch",
+                    "category_id": "61",
+                    "category_name": "70-79-inch"
+                },
+                {
+                    "title": "80 Inch & Above",
+                    "link": "https://fouanistore.com/shop?category_id=7&category_name=80-inch-above",
+                    "category_id": "7",
+                    "category_name": "80-inch-above"
+                },
+                {
+                    "title": "All",
+                    "link": "https://fouanistore.com/shop?category_id=5&category_name=tvs",
+                    "category_id": "5",
+                    "category_name": "tvs"
+                }
+            ]
+        },
+        {
+            "title": "audio",
+            "subcategories": [
+                {
+                    "title": "Sound Bar",
+                    "link": "https://fouanistore.com/shop?category_id=38&category_name=sound-bar",
+                    "category_id": "38",
+                    "category_name": "sound-bar"
+                },
+                {
+                    "title": "Wireless Speaker",
+                    "link": "https://fouanistore.com/shop?category_id=67&category_name=wireless-speaker",
+                    "category_id": "67",
+                    "category_name": "wireless-speaker"
+                },
+                {
+                    "title": "Mini Hi-Fi System",
+                    "link": "https://fouanistore.com/shop?category_id=10&category_name=mini-hi-fi-system",
+                    "category_id": "10",
+                    "category_name": "mini-hi-fi-system"
+                },
+                {
+                    "title": "Home Theater System",
+                    "link": "https://fouanistore.com/shop?category_id=104&category_name=home-theater-system",
+                    "category_id": "104",
+                    "category_name": "home-theater-system"
+                },
+                {
+                    "title": "AV Receiver Systems",
+                    "link": "https://fouanistore.com/shop?category_id=103&category_name=av-receiver-systems",
+                    "category_id": "103",
+                    "category_name": "av-receiver-systems"
+                },
+                {
+                    "title": "DVD Player",
+                    "link": "https://fouanistore.com/shop?category_id=68&category_name=dvd-player",
+                    "category_id": "68",
+                    "category_name": "dvd-player"
+                },
+                {
+                    "title": "All",
+                    "link": "https://fouanistore.com/shop?category_id=9&category_name=audio",
+                    "category_id": "9",
+                    "category_name": "audio"
+                }
+            ]
+        },
+        {
+            "title": "acs-fan",
+            "subcategories": [
+                {
+                    "title": "ACs/Fan",
+                    "link": "https://fouanistore.com/shop?category_id=124&category_name=acs-fan",
+                    "category_id": "124",
+                    "category_name": "acs-fan"
+                },
+                {
+                    "title": "Split Air Conditioner",
+                    "link": "https://fouanistore.com/shop?category_id=45&category_name=split-air-conditioner",
+                    "category_id": "45",
+                    "category_name": "split-air-conditioner"
+                },
+                {
+                    "title": "Floor Standing Air Conditioner",
+                    "link": "https://fouanistore.com/shop?category_id=46&category_name=floor-standing-air-conditioner",
+                    "category_id": "46",
+                    "category_name": "floor-standing-air-conditioner"
+                },
+                {
+                    "title": "Inverter Air Conditioner",
+                    "link": "https://fouanistore.com/shop?category_id=108&category_name=inverter-air-conditioner",
+                    "category_id": "108",
+                    "category_name": "inverter-air-conditioner"
+                },
+                {
+                    "title": "Portable Air Conditioner",
+                    "link": "https://fouanistore.com/shop?category_id=47&category_name=portable-air-conditioner",
+                    "category_id": "47",
+                    "category_name": "portable-air-conditioner"
+                },
+                {
+                    "title": "Air Purifier",
+                    "link": "https://fouanistore.com/shop?category_id=112&category_name=air-purifier",
+                    "category_id": "112",
+                    "category_name": "air-purifier"
+                },
+                {
+                    "title": "Fan",
+                    "link": "https://fouanistore.com/shop?category_id=111&category_name=fan",
+                    "category_id": "111",
+                    "category_name": "fan"
+                },
+                {
+                    "title": "All",
+                    "link": "https://fouanistore.com/shop?category_id=44&category_name=acs-fan",
+                    "category_id": "44",
+                    "category_name": "acs-fan"
+                }
+            ]
+        },
+        {
+            "title": "washing-machines",
+            "subcategories": [
+                {
+                    "title": "Top Loader",
+                    "link": "https://fouanistore.com/shop?category_id=32&category_name=top-loader",
+                    "category_id": "32",
+                    "category_name": "top-loader"
+                },
+                {
+                    "title": "Wash & Dry",
+                    "link": "https://fouanistore.com/shop?category_id=19&category_name=wash-dry",
+                    "category_id": "19",
+                    "category_name": "wash-dry"
+                },
+                {
+                    "title": "Front Loader",
+                    "link": "https://fouanistore.com/shop?category_id=31&category_name=front-loader",
+                    "category_id": "31",
+                    "category_name": "front-loader"
+                },
+                {
+                    "title": "Manual Twin Tube",
+                    "link": "https://fouanistore.com/shop?category_id=69&category_name=manual-twin-tube",
+                    "category_id": "69",
+                    "category_name": "manual-twin-tube"
+                },
+                {
+                    "title": "Dryers",
+                    "link": "https://fouanistore.com/shop?category_id=62&category_name=dryers",
+                    "category_id": "62",
+                    "category_name": "dryers"
+                },
+                {
+                    "title": "LG Styler Steam Closet",
+                    "link": "https://fouanistore.com/shop?category_id=102&category_name=lg-styler-steam-closet",
+                    "category_id": "102",
+                    "category_name": "lg-styler-steam-closet"
+                },
+                {
+                    "title": "All",
+                    "link": "https://fouanistore.com/shop?category_id=18&category_name=washing-machines",
+                    "category_id": "18",
+                    "category_name": "washing-machines"
+                }
+            ]
+        },
+        {
+            "title": "kitchen-appliances",
+            "subcategories": [
+                {
+                    "title": "Dish Washer",
+                    "link": "https://fouanistore.com/shop?category_id=101&category_name=dish-washer",
+                    "category_id": "101",
+                    "category_name": "dish-washer"
+                },
+                {
+                    "title": "Cookers",
+                    "link": "https://fouanistore.com/shop?category_id=99&category_name=cookers",
+                    "category_id": "99",
+                    "category_name": "cookers"
+                },
+                {
+                    "title": "Microwaves",
+                    "link": "https://fouanistore.com/shop?category_id=73&category_name=microwaves",
+                    "category_id": "73",
+                    "category_name": "microwaves"
+                },
+                {
+                    "title": "Air Fryer",
+                    "link": "https://fouanistore.com/shop?category_id=51&category_name=air-fryer",
+                    "category_id": "51",
+                    "category_name": "air-fryer"
+                },
+                {
+                    "title": "Ice Makers",
+                    "link": "https://fouanistore.com/shop?category_id=110&category_name=ice-makers",
+                    "category_id": "110",
+                    "category_name": "ice-makers"
+                },
+                {
+                    "title": "Water Dispenser",
+                    "link": "https://fouanistore.com/shop?category_id=98&category_name=water-dispenser",
+                    "category_id": "98",
+                    "category_name": "water-dispenser"
+                },
+                {
+                    "title": "Water Heater",
+                    "link": "https://fouanistore.com/shop?category_id=100&category_name=water-heater",
+                    "category_id": "100",
+                    "category_name": "water-heater"
+                },
+                {
+                    "title": "Small Appliances",
+                    "link": "https://fouanistore.com/shop?category_id=75&category_name=small-appliances",
+                    "category_id": "75",
+                    "category_name": "small-appliances"
+                },
+                {
+                    "title": "All",
+                    "link": "https://fouanistore.com/shop?category_id=49&category_name=kitchen-appliances",
+                    "category_id": "49",
+                    "category_name": "kitchen-appliances"
+                }
+            ]
+        },
+        {
+            "title": "power-solution",
+            "subcategories": [
+                {
+                    "title": "Deye",
+                    "link": "https://fouanistore.com/shop?category_id=121&category_name=deye",
+                    "category_id": "121",
+                    "category_name": "deye"
+                },
+                {
+                    "title": "UPS",
+                    "link": "https://fouanistore.com/shop?category_id=123&category_name=ups",
+                    "category_id": "123",
+                    "category_name": "ups"
+                },
+                {
+                    "title": "Generators",
+                    "link": "https://fouanistore.com/shop?category_id=109&category_name=generators",
+                    "category_id": "109",
+                    "category_name": "generators"
+                },
+                {
+                    "title": "Huawei",
+                    "link": "https://fouanistore.com/shop?category_id=96&category_name=huawei",
+                    "category_id": "96",
+                    "category_name": "huawei"
+                },
+                {
+                    "title": "Jinko",
+                    "link": "https://fouanistore.com/shop?category_id=40&category_name=jinko",
+                    "category_id": "40",
+                    "category_name": "jinko"
+                },
+                {
+                    "title": "Pylontech",
+                    "link": "https://fouanistore.com/shop?category_id=106&category_name=pylontech",
+                    "category_id": "106",
+                    "category_name": "pylontech"
+                },
+                {
+                    "title": "Growatt",
+                    "link": "https://fouanistore.com/shop?category_id=105&category_name=growatt",
+                    "category_id": "105",
+                    "category_name": "growatt"
+                },
+                {
+                    "title": "All",
+                    "link": "https://fouanistore.com/shop?category_id=39&category_name=power-solution",
+                    "category_id": "39",
+                    "category_name": "power-solution"
+                }
+            ]
+        },
+        {
+            "title": "tv-stand",
+            "subcategories": [
+                {
+                    "title": "Agile",
+                    "link": "https://fouanistore.com/shop?category_id=37&category_name=agile",
+                    "category_id": "37",
+                    "category_name": "agile"
+                },
+                {
+                    "title": "Tables",
+                    "link": "https://fouanistore.com/shop?category_id=35&category_name=tables",
+                    "category_id": "35",
+                    "category_name": "tables"
+                },
+                {
+                    "title": "TV Stands",
+                    "link": "https://fouanistore.com/shop?category_id=107&category_name=tv-stands",
+                    "category_id": "107",
+                    "category_name": "tv-stands"
+                },
+                {
+                    "title": "Storage",
+                    "link": "https://fouanistore.com/shop?category_id=36&category_name=storage",
+                    "category_id": "36",
+                    "category_name": "storage"
+                },
+                {
+                    "title": "Seating",
+                    "link": "https://fouanistore.com/shop?category_id=34&category_name=seating",
+                    "category_id": "34",
+                    "category_name": "seating"
+                },
+                {
+                    "title": "All",
+                    "link": "https://fouanistore.com/shop?category_id=33&category_name=tv-stand",
+                    "category_id": "33",
+                    "category_name": "tv-stand"
+                }
+            ]
+        }
+    ]
+}

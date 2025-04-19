@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Scraping Dashboard</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        #progress {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #000000;
+            border: 1px solid #333;
+            border-radius: 5px;
+            height: 500px;
+            overflow-y: auto;
+            font-size: 14px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+        .message {
+            margin: 5px 0;
+            padding: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        .success {
+            color: #00ff00;
+        }
+        .error {
+            color: #ff0000;
+        }
+        .info {
+            color: #ffffff;
+        }
+        .warning {
+            color: #ffff00;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #333;
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+        #startButton {
+            color: #00ff00;
+            border: 1px solid #00ff00;
+        }
+        #startButton:hover {
+            background-color: #00ff00;
+            color: #000000;
+        }
+        #stopButton {
+            color: #ff0000;
+            border: 1px solid #ff0000;
+            display: none;
+        }
+        #stopButton:hover {
+            background-color: #ff0000;
+            color: #000000;
+        }
+        button:disabled {
+            background-color: #333;
+            color: #666;
+            border-color: #666;
+            cursor: not-allowed;
+        }
+        .terminal-header {
+            background-color: #333;
+            padding: 10px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .terminal-title {
+            color: #ffffff;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .terminal-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .control-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .control-button:hover {
+            transform: scale(1.1);
+        }
+        .close {
+            background-color: #ff5f56;
+        }
+        .close:hover {
+            background-color: #ff3b30;
+        }
+        .minimize {
+            background-color: #ffbd2e;
+        }
+        .minimize:hover {
+            background-color: #ffa500;
+        }
+        .maximize {
+            background-color: #27c93f;
+        }
+        .maximize:hover {
+            background-color: #1aad2b;
+        }
+        .prompt {
+            color: #00ff00;
+            margin-right: 5px;
+        }
+        .command {
+            color: #ffffff;
+        }
+        .timestamp {
+            color: #666;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+        .keyboard-shortcut {
+            color: #666;
+            font-size: 10px;
+            margin-left: 5px;
+        }
+        .command-input {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #000000;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        .command-input.active {
+            display: block;
+        }
+        .command-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .command-prompt {
+            color: #00ff00;
+        }
+        #commandInput {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            width: 100%;
+            outline: none;
+        }
+        #commandInput::placeholder {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #00ff00; text-align: center;">Product Scraping Terminal</h1>
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <span>Scraping Process Terminal</span>
+                <button id="startButton" onclick="startProcess()">Start Process</button>
+                <button id="stopButton" onclick="stopProcess()">Stop Process</button>
+            </div>
+            <div class="terminal-controls">
+                <div class="control-button close" onclick="closeTerminal()" title="Close (Ctrl+W)"></div>
+                <div class="control-button minimize" onclick="minimizeTerminal()" title="Minimize (Ctrl+M)"></div>
+                <div class="control-button maximize" onclick="maximizeTerminal()" title="Maximize (Ctrl+Shift+M)"></div>
+            </div>
+        </div>
+        <div id="progress">
+            <div class="message info">
+                <span class="timestamp">[00:00:00]</span>
+                <span class="prompt">$</span>
+                <span class="command">Ready to start scraping process...</span>
+            </div>
+        </div>
+        <div class="command-input" id="commandInputContainer">
+            <div class="command-line">
+                <span class="command-prompt">$</span>
+                <input type="text" id="commandInput" placeholder="Type 'start' to reopen terminal..." autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let eventSource = null;
+        const progressDiv = document.getElementById('progress');
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+        const commandInput = document.getElementById('commandInput');
+        const commandInputContainer = document.getElementById('commandInputContainer');
+        let isMinimized = false;
+        let originalHeight = progressDiv.style.height;
+
+        // Check process status on page load
+        window.addEventListener('load', function() {
+            checkProcessStatus();
+        });
+
+        function checkProcessStatus() {
+            fetch('/check-process')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'running') {
+                        // Process is running, connect to it
+                        startButton.disabled = true;
+                        startButton.style.display = 'none';
+                        stopButton.style.display = 'inline-block';
+                        addMessage('Reconnected to running process', 'success');
+                        connectToProcess();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking process status:', error);
+                });
+        }
+
+        function connectToProcess() {
+            if (eventSource) {
+                eventSource.close();
+            }
+            
+            eventSource = new EventSource('/progress');
+            
+            eventSource.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                const message = data.message;
+                
+                // Determine message type based on content
+                let type = 'info';
+                if (message.includes('Error') || message.includes('error')) {
+                    type = 'error';
+                } else if (message.includes('successfully') || message.includes('Success')) {
+                    type = 'success';
+                } else if (message.includes('Warning') || message.includes('warning')) {
+                    type = 'warning';
+                }
+                
+                addMessage(message, type);
+                
+                // If the process is complete, enable the button
+                if (message.includes('completed')) {
+                    eventSource.close();
+                    startButton.disabled = false;
+                    startButton.style.display = 'inline-block';
+                    stopButton.style.display = 'none';
+                }
+            };
+            
+            eventSource.onerror = function() {
+                addMessage('Connection error', 'error');
+                eventSource.close();
+                startButton.disabled = false;
+                startButton.style.display = 'inline-block';
+                stopButton.style.display = 'none';
+            };
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            // Ctrl+W to close
+            if (event.ctrlKey && event.key === 'w') {
+                event.preventDefault();
+                closeTerminal();
+            }
+            // Ctrl+M to minimize
+            if (event.ctrlKey && event.key === 'm') {
+                event.preventDefault();
+                minimizeTerminal();
+            }
+            // Ctrl+Shift+M to maximize
+            if (event.ctrlKey && event.shiftKey && event.key === 'M') {
+                event.preventDefault();
+                maximizeTerminal();
+            }
+        });
+
+        function getCurrentTime() {
+            const now = new Date();
+            return now.toLocaleTimeString('en-US', { 
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+
+        function addMessage(message, type = 'info') {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            
+            // Add timestamp
+            const timestampSpan = document.createElement('span');
+            timestampSpan.className = 'timestamp';
+            timestampSpan.textContent = `[${getCurrentTime()}]`;
+            messageDiv.appendChild(timestampSpan);
+            
+            // Add prompt for info messages
+            if (type === 'info') {
+                const promptSpan = document.createElement('span');
+                promptSpan.className = 'prompt';
+                promptSpan.textContent = '$';
+                messageDiv.appendChild(promptSpan);
+            }
+            
+            const messageSpan = document.createElement('span');
+            messageSpan.className = type === 'info' ? 'command' : '';
+            messageSpan.textContent = message;
+            messageDiv.appendChild(messageSpan);
+            
+            progressDiv.appendChild(messageDiv);
+            progressDiv.scrollTop = progressDiv.scrollHeight;
+        }
+
+        function closeTerminal() {
+            if (isMinimized) {
+                maximizeTerminal();
+            }
+            addMessage('Terminal closed by user', 'warning');
+            if (eventSource) {
+                eventSource.close();
+            }
+            // Simulate closing animation
+            progressDiv.style.transition = 'opacity 0.5s';
+            progressDiv.style.opacity = '0';
+            setTimeout(() => {
+                progressDiv.style.display = 'none';
+                commandInputContainer.classList.add('active');
+                commandInput.focus();
+            }, 500);
+        }
+
+        function minimizeTerminal() {
+            if (!isMinimized) {
+                originalHeight = progressDiv.style.height;
+                progressDiv.style.height = '100px';
+                isMinimized = true;
+                addMessage('Terminal minimized', 'info');
+            }
+        }
+
+        function maximizeTerminal() {
+            if (isMinimized) {
+                progressDiv.style.height = originalHeight || '500px';
+                isMinimized = false;
+                addMessage('Terminal maximized', 'info');
+            }
+        }
+
+        function startProcess() {
+            // Disable start button and show stop button
+            startButton.disabled = true;
+            startButton.style.display = 'none';
+            stopButton.style.display = 'inline-block';
+            
+            // Clear previous messages
+            progressDiv.innerHTML = '';
+            addMessage('Ready to start scraping process...', 'info');
+            
+            // Start the process
+            fetch('/start-process', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'started') {
+                    addMessage('Process started successfully', 'success');
+                    connectToProcess();
+                }
+            })
+            .catch(error => {
+                addMessage('Error starting process: ' + error, 'error');
+                startButton.disabled = false;
+                startButton.style.display = 'inline-block';
+                stopButton.style.display = 'none';
+            });
+        }
+
+        function stopProcess() {
+            // Send stop request to server
+            fetch('/stop-process', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'stopped') {
+                    addMessage('Process stopped by user', 'warning');
+                    if (eventSource) {
+                        eventSource.close();
+                    }
+                    startButton.disabled = false;
+                    startButton.style.display = 'inline-block';
+                    stopButton.style.display = 'none';
+                }
+            })
+            .catch(error => {
+                addMessage('Error stopping process: ' + error, 'error');
+            });
+        }
+
+        function reopenTerminal() {
+            progressDiv.style.display = 'block';
+            progressDiv.style.opacity = '1';
+            commandInputContainer.classList.remove('active');
+            commandInput.value = '';
+            addMessage('Terminal reopened', 'success');
+        }
+
+        // Handle command input
+        commandInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                const command = commandInput.value.trim().toLowerCase();
+                if (command === 'start') {
+                    reopenTerminal();
+                } else {
+                    addMessage(`Unknown command: ${command}`, 'error');
+                    commandInput.value = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

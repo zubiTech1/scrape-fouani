@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Scraper Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Terminal styling */
+        .terminal {
+            background-color: #1a1a1a;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .terminal-header {
+            background-color: #333;
+            padding: 0.5rem 1rem;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: -1rem -1rem 1rem -1rem;
+        }
+
+        .terminal-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-close { background-color: #ff5f56; }
+        .terminal-minimize { background-color: #ffbd2e; }
+        .terminal-maximize { background-color: #27c93f; }
+
+        .terminal-title {
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .terminal-content {
+            height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            scrollbar-width: thin;
+            scrollbar-color: #666 #1a1a1a;
+        }
+
+        /* Custom scrollbar styling */
+        .terminal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .terminal-content::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        .terminal-content::-webkit-scrollbar-thumb {
+            background: #666;
+            border-radius: 4px;
+        }
+
+        /* Command prompt styling */
+        .command-line {
+            color: #00ff00;
+        }
+
+        .command-line::before {
+            content: "$ ";
+            color: #00ff00;
+        }
+
+        .output-line {
+            color: #cccccc;
+        }
+
+        .error-line {
+            color: #ff5f56;
+        }
+
+        .success-line {
+            color: #27c93f;
+        }
+
+        .warning-line {
+            color: #ffbd2e;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8 text-white">Carousel Scraper Dashboard</h1>
+        
+        <!-- Control Panel -->
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-white">Control Panel</h2>
+            <div class="flex space-x-4">
+                <button id="startBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
+                    Start Scraping
+                </button>
+                <button id="stopBtn" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors" disabled>
+                    Stop Scraping
+                </button>
+            </div>
+        </div>
+        
+        <!-- Status Panel -->
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-white">Status</h2>
+            <div id="status" class="text-gray-400">
+                Not running
+            </div>
+        </div>
+        
+        <!-- Terminal Window -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="terminal-button terminal-close"></div>
+                    <div class="terminal-button terminal-minimize"></div>
+                    <div class="terminal-button terminal-maximize"></div>
+                </div>
+                <div class="terminal-title">carousel-scraper — bash</div>
+                <div style="width: 60px;"></div> <!-- Spacer for alignment -->
+            </div>
+            <div id="log" class="terminal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const status = document.getElementById('status');
+        const log = document.getElementById('log');
+        let eventSource = null;
+
+        function updateButtons(isRunning) {
+            startBtn.disabled = isRunning;
+            stopBtn.disabled = !isRunning;
+            status.textContent = isRunning ? 'Running' : 'Not running';
+            status.className = isRunning ? 'text-green-500' : 'text-gray-400';
+        }
+
+        function addLogMessage(message, type = 'output') {
+            const div = document.createElement('div');
+            
+            // Determine the line type and apply appropriate styling
+            if (message.toLowerCase().includes('error')) {
+                div.className = 'error-line';
+            } else if (message.toLowerCase().includes('success') || message.toLowerCase().includes('completed')) {
+                div.className = 'success-line';
+            } else if (message.toLowerCase().includes('warning')) {
+                div.className = 'warning-line';
+            } else if (message.startsWith('Starting')) {
+                div.className = 'command-line';
+            } else {
+                div.className = 'output-line';
+            }
+            
+            div.textContent = message;
+            log.appendChild(div);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        function checkProcessStatus() {
+            fetch('/check-process')
+                .then(response => response.json())
+                .then(data => {
+                    updateButtons(data.status === 'running');
+                });
+        }
+
+        startBtn.addEventListener('click', () => {
+            fetch('/start-carousel', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'started') {
+                        updateButtons(true);
+                        addLogMessage('Starting carousel scraping process...', 'command');
+                        
+                        eventSource = new EventSource('/progress');
+                        eventSource.onmessage = function(event) {
+                            const data = JSON.parse(event.data);
+                            addLogMessage(data.message);
+                            
+                            if (data.message === 'Process completed') {
+                                eventSource.close();
+                                updateButtons(false);
+                            }
+                        };
+                    } else {
+                        addLogMessage(`Error: ${data.message}`, 'error');
+                    }
+                });
+        });
+
+        stopBtn.addEventListener('click', () => {
+            fetch('/stop-process', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'stopped') {
+                        updateButtons(false);
+                        addLogMessage('Process stopped', 'warning');
+                        if (eventSource) {
+                            eventSource.close();
+                        }
+                    } else {
+                        addLogMessage(`Error: ${data.message}`, 'error');
+                    }
+                });
+        });
+
+        setInterval(checkProcessStatus, 5000);
+        checkProcessStatus();
+
+        // Add cleanup on page unload
+        window.addEventListener('beforeunload', function(e) {
+            fetch('/cleanup', {
+                method: 'POST',
+                keepalive: true  // Ensures the request completes even if page is closing
+            });
+        });
+
+        // Add cleanup on visibility change (tab close/switch)
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden') {
+                fetch('/cleanup', {
+                    method: 'POST',
+                    keepalive: true
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
