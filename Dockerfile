@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y \
     && apt-get update \
     && apt-get install -y google-chrome-stable \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /tmp/chrome_data_dir
 
 # Set working directory
 WORKDIR /app
@@ -30,6 +31,7 @@ COPY . .
 ENV PORT=5000
 ENV PYTHONUNBUFFERED=1
 ENV CHROME_BINARY_PATH=/usr/bin/google-chrome
+ENV CHROME_DATA_DIR=/tmp/chrome_data_dir
 
 # Expose port
 EXPOSE 5000
