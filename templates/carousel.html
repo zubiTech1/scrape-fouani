@@ -139,23 +139,22 @@
     </div>
 
     <script>
-        const startBtn = document.getElementById('startBtn');
-        const stopBtn = document.getElementById('stopBtn');
-        const status = document.getElementById('status');
-        const log = document.getElementById('log');
-        let eventSource = null;
+        const carouselStartBtn = document.getElementById('startBtn');
+        const carouselStopBtn = document.getElementById('stopBtn');
+        const carouselStatus = document.getElementById('status');
+        const carouselLog = document.getElementById('log');
+        let carouselEventSource = null;
 
-        function updateButtons(isRunning) {
-            startBtn.disabled = isRunning;
-            stopBtn.disabled = !isRunning;
-            status.textContent = isRunning ? 'Running' : 'Not running';
-            status.className = isRunning ? 'text-green-500' : 'text-gray-400';
+        function updateCarouselButtons(isRunning) {
+            carouselStartBtn.disabled = isRunning;
+            carouselStopBtn.disabled = !isRunning;
+            carouselStatus.textContent = isRunning ? 'Running' : 'Not running';
+            carouselStatus.className = isRunning ? 'text-green-500' : 'text-gray-400';
         }
 
-        function addLogMessage(message, type = 'output') {
+        function addCarouselLogMessage(message, type = 'output') {
             const div = document.createElement('div');
             
-            // Determine the line type and apply appropriate styling
             if (message.toLowerCase().includes('error')) {
                 div.className = 'error-line';
             } else if (message.toLowerCase().includes('success') || message.toLowerCase().includes('completed')) {
@@ -169,73 +168,78 @@
             }
             
             div.textContent = message;
-            log.appendChild(div);
-            log.scrollTop = log.scrollHeight;
+            carouselLog.appendChild(div);
+            carouselLog.scrollTop = carouselLog.scrollHeight;
         }
 
-        function checkProcessStatus() {
-            fetch('/check-process')
+        function checkCarouselProcessStatus() {
+            fetch('/carousel/check-process')
                 .then(response => response.json())
                 .then(data => {
-                    updateButtons(data.status === 'running');
+                    updateCarouselButtons(data.status === 'running');
                 });
         }
 
-        startBtn.addEventListener('click', () => {
-            fetch('/start-carousel', { method: 'POST' })
+        carouselStartBtn.addEventListener('click', () => {
+            fetch('/carousel/start-process', { method: 'POST' })
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 'started') {
-                        updateButtons(true);
-                        addLogMessage('Starting carousel scraping process...', 'command');
+                        updateCarouselButtons(true);
+                        addCarouselLogMessage('Starting carousel scraping process...', 'command');
                         
-                        eventSource = new EventSource('/progress');
-                        eventSource.onmessage = function(event) {
+                        carouselEventSource = new EventSource('/carousel/progress');
+                        carouselEventSource.onmessage = function(event) {
                             const data = JSON.parse(event.data);
-                            addLogMessage(data.message);
+                            addCarouselLogMessage(data.message);
                             
-                            if (data.message === 'Process completed') {
-                                eventSource.close();
-                                updateButtons(false);
+                            if (data.message === 'Process completed' || data.message.toLowerCase().includes('error')) {
+                                carouselEventSource.close();
+                                updateCarouselButtons(false);
                             }
                         };
+                        
+                        carouselEventSource.onerror = function(error) {
+                            addCarouselLogMessage('Error: Lost connection to server', 'error');
+                            carouselEventSource.close();
+                            updateCarouselButtons(false);
+                        };
                     } else {
-                        addLogMessage(`Error: ${data.message}`, 'error');
+                        addCarouselLogMessage(`Error: ${data.message}`, 'error');
                     }
                 });
         });
 
-        stopBtn.addEventListener('click', () => {
-            fetch('/stop-process', { method: 'POST' })
+        carouselStopBtn.addEventListener('click', () => {
+            fetch('/carousel/stop-process', { method: 'POST' })
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 'stopped') {
-                        updateButtons(false);
-                        addLogMessage('Process stopped', 'warning');
-                        if (eventSource) {
-                            eventSource.close();
+                        updateCarouselButtons(false);
+                        addCarouselLogMessage('Process stopped', 'warning');
+                        if (carouselEventSource) {
+                            carouselEventSource.close();
                         }
                     } else {
-                        addLogMessage(`Error: ${data.message}`, 'error');
+                        addCarouselLogMessage(`Error: ${data.message}`, 'error');
                     }
                 });
         });
 
-        setInterval(checkProcessStatus, 5000);
-        checkProcessStatus();
+        setInterval(checkCarouselProcessStatus, 5000);
+        checkCarouselProcessStatus();
 
         // Add cleanup on page unload
         window.addEventListener('beforeunload', function(e) {
-            fetch('/cleanup', {
+            fetch('/carousel/cleanup', {
                 method: 'POST',
-                keepalive: true  // Ensures the request completes even if page is closing
+                keepalive: true
             });
         });
 
-        // Add cleanup on visibility change (tab close/switch)
         document.addEventListener('visibilitychange', function() {
             if (document.visibilityState === 'hidden') {
-                fetch('/cleanup', {
+                fetch('/carousel/cleanup', {
                     method: 'POST',
                     keepalive: true
                 });
@@ -243,4 +247,4 @@
         });
     </script>
 </body>
-</html> 
+</html>

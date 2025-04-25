@@ -1,5 +1,17 @@
 services:
   - type: web
+    name: fouani-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn api:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
     name: fouani-menu-api
     env: python
     buildCommand: pip install -r requirements.txt
@@ -10,4 +22,1759 @@ services:
       - key: MONGODB_URI
         value: your_mongodb_connection_string  # Set this in Render dashboard
       - key: PORT
-        value: 10000 
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        value: your_mongodb_connection_string  # Set this in Render dashboard
+      - key: PORT
+        value: 10000
+  - type: web
+    name: fouani-menu-api
+    env

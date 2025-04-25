@@ -9,7 +9,7 @@ from datetime import datetime
 from selenium import webdriver
 import signal
 import sys
-
+print("Starting the script...")
 # Set up logging
 logging.basicConfig(
     level=logging.INFO,
