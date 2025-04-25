@@ -15,6 +15,7 @@ import logging
 app = Flask(__name__)
 
 # Queue to store progress updates
+# Queue to store progress updates
 progress_queue = queue.Queue()
 carousel_progress_queue = queue.Queue()
 
