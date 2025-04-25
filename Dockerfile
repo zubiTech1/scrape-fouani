@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
-WORKDIR /api
+WORKDIR /
 
 # Copy requirements first to leverage Docker cache
 COPY requirements.txt .
