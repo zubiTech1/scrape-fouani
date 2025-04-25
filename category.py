@@ -9,13 +9,26 @@ import json
 import time
 from urllib.parse import urljoin
 import sys
+import os
 
 # Base URL of the Fouani website
 base_url = "https://fouanistore.com"
 
 def setup_driver():
-    """Set up and return a configured Chrome WebDriver instance."""
-    chrome_options = Options()
+    """Setup and return a Chrome WebDriver instance"""
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('--disable-gpu')
+    
+    # Use environment variables for Chrome binary and data directory
+    chrome_binary = os.getenv('CHROME_BINARY_PATH', '/usr/bin/google-chrome')
+    chrome_data_dir = os.getenv('CHROME_DATA_DIR', '/tmp/chrome_data_dir')
+    
+    chrome_options.binary_location = chrome_binary
+    chrome_options.add_argument(f'--user-data-dir={chrome_data_dir}')
+    
     chrome_options.add_argument('--start-maximized')
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
