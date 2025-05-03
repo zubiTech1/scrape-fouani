@@ -22,11 +22,27 @@ def setup_driver():
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--disable-gpu')
     
-    # Use environment variables for Chrome binary and data directory
-    chrome_binary = os.getenv('CHROME_BINARY_PATH', '/usr/bin/google-chrome')
-    chrome_data_dir = os.getenv('CHROME_DATA_DIR', '/tmp/chrome_data_dir')
+    # Detect Chrome binary path for Windows
+    chrome_binary = None
+    if os.name == 'nt':  # Windows
+        paths = [
+            os.path.expandvars('%ProgramFiles%\Google\Chrome\Application\chrome.exe'),
+            os.path.expandvars('%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe'),
+            os.path.expandvars('%LocalAppData%\Google\Chrome\Application\chrome.exe')
+        ]
+        for path in paths:
+            if os.path.exists(path):
+                chrome_binary = path
+                break
+    else:  # Linux/Unix
+        chrome_binary = os.getenv('CHROME_BINARY_PATH', '/usr/bin/google-chrome')
     
-    chrome_options.binary_location = chrome_binary
+    if chrome_binary:
+        chrome_options.binary_location = chrome_binary
+    
+    # Set up Chrome user data directory
+    chrome_data_dir = os.path.join(os.path.expanduser('~'), 'chrome-data')
+    os.makedirs(chrome_data_dir, exist_ok=True)
     chrome_options.add_argument(f'--user-data-dir={chrome_data_dir}')
     
     chrome_options.add_argument('--start-maximized')
