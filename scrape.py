@@ -11,13 +11,46 @@ import time
 import re
 from urllib.parse import urljoin
 import sys
+import os
+
+
+
+
 
 # Base URL of the Fouani website
 base_url = "https://fouanistore.com"
 
 def setup_driver():
     """Set up and return a configured Chrome WebDriver instance."""
-    chrome_options = Options()
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('--disable-gpu')
+    
+    # Detect Chrome binary path for Windows
+    chrome_binary = None
+    if os.name == 'nt':  # Windows
+        paths = [
+            os.path.expandvars('%ProgramFiles%\Google\Chrome\Application\chrome.exe'),
+            os.path.expandvars('%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe'),
+            os.path.expandvars('%LocalAppData%\Google\Chrome\Application\chrome.exe')
+        ]
+        for path in paths:
+            if os.path.exists(path):
+                chrome_binary = path
+                break
+    else:  # Linux/Unix
+        chrome_binary = os.getenv('CHROME_BINARY_PATH', '/usr/bin/google-chrome')
+    
+    if chrome_binary:
+        chrome_options.binary_location = chrome_binary
+    
+    # Set up Chrome user data directory
+    chrome_data_dir = os.path.join(os.path.expanduser('~'), 'chrome-data')
+    os.makedirs(chrome_data_dir, exist_ok=True)
+    chrome_options.add_argument(f'--user-data-dir={chrome_data_dir}')
+    
     chrome_options.add_argument('--start-maximized')
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
