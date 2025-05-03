@@ -26,9 +26,9 @@ def setup_driver():
     chrome_binary = None
     if os.name == 'nt':  # Windows
         paths = [
-            os.path.expandvars('%ProgramFiles%\Google\Chrome\Application\chrome.exe'),
-            os.path.expandvars('%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe'),
-            os.path.expandvars('%LocalAppData%\Google\Chrome\Application\chrome.exe')
+            os.path.expandvars(r'%ProgramFiles%\Google\Chrome\Application\chrome.exe'),
+            os.path.expandvars(r'%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe'),
+            os.path.expandvars(r'%LocalAppData%\Google\Chrome\Application\chrome.exe')
         ]
         for path in paths:
             if os.path.exists(path):
@@ -40,10 +40,23 @@ def setup_driver():
     if chrome_binary:
         chrome_options.binary_location = chrome_binary
     
-    # Set up Chrome user data directory
-    chrome_data_dir = os.path.join(os.path.expanduser('~'), 'chrome-data')
+    # Set up Chrome user data directory with unique session ID
+    import uuid
+    session_id = str(uuid.uuid4())
+    chrome_data_dir = os.path.join(os.path.expanduser('~'), f'chrome-data-{session_id}')
     os.makedirs(chrome_data_dir, exist_ok=True)
     chrome_options.add_argument(f'--user-data-dir={chrome_data_dir}')
+    
+    # Clean up the user data directory when the driver is done
+    import atexit
+    import shutil
+    def cleanup_user_data_dir():
+        try:
+            if os.path.exists(chrome_data_dir):
+                shutil.rmtree(chrome_data_dir)
+        except Exception as e:
+            print(f"Error cleaning up user data directory: {e}", flush=True)
+    atexit.register(cleanup_user_data_dir)
     
     chrome_options.add_argument('--start-maximized')
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
